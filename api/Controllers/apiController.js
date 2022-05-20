@@ -39,6 +39,73 @@ const delivery = async(req, res)=>{
     }
 }
 
+const products = async(req, res)=>{
+    try {
+        res.render('products')
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
+const product_details = async(req, res)=>{
+    try {
+        res.render('product_details')
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+const compair = async(req, res)=>{
+    try {
+        res.render('compair')
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
+
+const product_summary = async(req, res)=>{
+    try {
+        res.render('product_summary')
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
+
+const tac = async(req, res)=>{
+    try {
+        res.render('tac')
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
+
+const login = async(req, res)=>{
+    try {
+        res.render('login')
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
+
+const legal_notice = async(req, res)=>{
+    try {
+        res.render('legal_notice')
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
+const faq = async(req, res)=>{
+    try {
+        res.render('faq')
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
 
 
 module.exports = {
@@ -46,5 +113,13 @@ module.exports = {
     register,
     special_offer,
     contact,
-    delivery
+    delivery,
+    products,
+    product_details,
+    compair,
+    product_summary,
+    tac,
+    faq,
+    legal_notice,
+    login
 }
