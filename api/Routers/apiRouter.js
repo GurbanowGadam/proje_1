@@ -18,6 +18,12 @@ router.get('/faq', apiController.faq)
 router.get('/tac', apiController.tac)
 router.get('/legal-notice', apiController.legal_notice)
 router.get('/login', apiController.login)
+router.get('/components', apiController.components)
+router.get('/forgetpass', apiController.forgetpass)
+
+
+router.get('/get-categories', apiController.get_categories)
+
 
 
 

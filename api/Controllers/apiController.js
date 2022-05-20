@@ -1,4 +1,4 @@
-
+const {q_get_categories} = require('./../Queries/apiQuery')
 
 const index = async(req, res)=>{
     try {
@@ -24,6 +24,7 @@ const special_offer = async(req, res)=>{
         console.log(err.message);
     }
 }
+
 const contact = async(req, res)=>{
     try {
         res.render('contact')
@@ -31,6 +32,7 @@ const contact = async(req, res)=>{
         console.log(err.message);
     }
 }
+
 const delivery = async(req, res)=>{
     try {
         res.render('delivery')
@@ -54,6 +56,7 @@ const product_details = async(req, res)=>{
         console.log(err.message);
     }
 }
+
 const compair = async(req, res)=>{
     try {
         res.render('compair')
@@ -61,7 +64,6 @@ const compair = async(req, res)=>{
         console.log(err.message);
     }
 }
-
 
 const product_summary = async(req, res)=>{
     try {
@@ -71,7 +73,6 @@ const product_summary = async(req, res)=>{
     }
 }
 
-
 const tac = async(req, res)=>{
     try {
         res.render('tac')
@@ -80,7 +81,6 @@ const tac = async(req, res)=>{
     }
 }
 
-
 const login = async(req, res)=>{
     try {
         res.render('login')
@@ -88,7 +88,6 @@ const login = async(req, res)=>{
         console.log(err.message);
     }
 }
-
 
 const legal_notice = async(req, res)=>{
     try {
@@ -103,6 +102,38 @@ const faq = async(req, res)=>{
         res.render('faq')
     } catch (err) {
         console.log(err.message);
+    }
+}
+
+const forgetpass = async(req, res)=>{
+    try {
+        res.render('forgetpass')
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
+const components = async(req, res)=>{
+    try {
+        res.render('components')
+    } catch (err) {
+        console.log(err.message);
+    }
+}
+
+
+
+const get_categories = async(req, res)=>{
+    try {
+        const result = await q_get_categories()
+        if(result){
+            res.render("index",{result})
+        } else {
+            res.json({ msg: "query err" })
+        }
+    } catch (err) {
+        console.log(err.message);
+        res.json({ msg: "query err" })
     }
 }
 
@@ -121,5 +152,10 @@ module.exports = {
     tac,
     faq,
     legal_notice,
-    login
+    login,
+    components,
+    forgetpass,
+
+    get_categories,
+
 }
