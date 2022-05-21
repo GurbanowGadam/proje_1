@@ -2,8 +2,13 @@ const {q_get_categories} = require('./../Queries/apiQuery')
 
 const index = async(req, res)=>{
     try {
-        res.render('index')
-        // res.render('client/register')
+        const result = await q_get_categories()
+        if(result){
+            console.log(result);
+            res.render("index",{layout: 'layout_2',  result})
+        } else {
+            res.json({ msg: "query err" })
+        }
     } catch (err) {
         console.log(err.message);
     }
@@ -127,6 +132,7 @@ const get_categories = async(req, res)=>{
     try {
         const result = await q_get_categories()
         if(result){
+            console.log(result);
             res.render("index",{result})
         } else {
             res.json({ msg: "query err" })
